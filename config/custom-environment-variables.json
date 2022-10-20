@@ -1,4 +1,4 @@
 {
   "jwtPrivateKey": "tommyfooties_jwtPrivateKey",
-  "dbb": "mongodb+srv://vidlyuser:vidlyuser@vidly.tg5zasp.mongodb.net/?retryWrites=true&w=majority"
+  "db": "mongodb+srv://vidlyuser:vidlyuser@vidly.tg5zasp.mongodb.net/?retryWrites=true&w=majority"
 }
