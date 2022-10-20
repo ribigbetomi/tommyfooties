@@ -5,13 +5,8 @@ const config = require("config");
 module.exports = function () {
   const uri = process.env.DB_URI;
 
-  const db = config.get("db");
-  mongoose
-    .connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
-    .then(() => winston.info(`Connected to ${db}...`));
+  // const db = config.get("db");
+  mongoose.connect(uri).then(() => winston.info(`Connected to ${uri}...`));
   // mongoose
   //   .connect(db)
   //   .then(() =>
