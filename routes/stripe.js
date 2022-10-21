@@ -153,37 +153,41 @@ router.post(
   async (req, res) => {
     const sig = req.headers["stripe-signature"];
 
-    let endpointSecret;
-    endpointSecret = "whsec_6qbjEGiPuvC8hcMDMor9SVzEJEG9jv3l";
+    // let endpointSecret;
+    let endpointSecret = "whsec_6qbjEGiPuvC8hcMDMor9SVzEJEG9jv3l";
     // endpointSecret =
     //   "whsec_8d16263d51820da43909d60ea2cf082a29c9362e7a6c96a233fc8e3f1cc39d88";
 
-    let data;
-    let eventType;
+    // let data;
+    // let eventType;
 
-    if (endpointSecret) {
-      let event;
+    // if (endpointSecret) {
+    let event;
 
-      try {
-        event = stripe.webhooks.constructEvent(req.body, sig, endpointSecret);
-        console.log("Webhook verified.");
-      } catch (err) {
-        console.log(`Webhook Error: ${err.message}`);
-        res.status(400).send(`Webhook Error: ${err.message}`);
-        return;
-      }
-      // we raise the webhook(event: checkout.session.completed), once we raise the event, the first thing to do is to confirm the event comes from stripe for security reasons
-      // this first try catch block is to verify that the event comes from stripe
-
-      data = event.data.object;
-      eventType = event.type;
-    } else {
-      data = req.body.data.object;
-      eventType = req.body.type;
+    try {
+      event = await stripe.webhooks.constructEvent(
+        req.body,
+        sig,
+        endpointSecret
+      );
+      console.log("Webhook verified.");
+    } catch (err) {
+      console.log(`Webhook Error: ${err.message}`);
+      res.status(400).send(`Webhook Error: ${err.message}`);
+      return;
     }
+    // we raise the webhook(event: checkout.session.completed), once we raise the event, the first thing to do is to confirm the event comes from stripe for security reasons
+    // this first try catch block is to verify that the event comes from stripe
+
+    // data = event.data.object;
+    // eventType = event.type;
+    // } else {
+    //   data = req.body.data.object;
+    //   eventType = req.body.type;
+    // }
 
     // Handle the event
-    if (eventType === "checkout.session.completed") {
+    if (event.type === "checkout.session.completed") {
       await stripe.customers
         .retrieve(data.customer)
         .then((customer) => {
