@@ -1,5 +1,11 @@
 const express = require("express");
 const Stripe = require("stripe");
+const cors = require("cors");
+const corsOptions = {
+  origin: "https://tommyfooties.netlify.app",
+  optionsSuccessStatus: 200,
+};
+
 // const config = require("config");
 require("dotenv-extended").config();
 const { Order } = require("../models/order");
@@ -12,11 +18,13 @@ const stripe = Stripe(process.env.STRIPE_KEY);
 
 const router = express.Router();
 
+router.use(cors());
+
 router.get("/", (req, res) => {
   res.send("Stripe working well");
 });
 
-router.post("/create-checkout-session", async (req, res) => {
+router.post("/create-checkout-session", cors(corsOptions), async (req, res) => {
   //   console.log(clientUrl, stripeKey);
   const customer = await stripe.customers.create({
     metadata: {
@@ -140,6 +148,7 @@ const createOrder = async (customer, data) => {
 
 router.post(
   "/webhook",
+  cors(corsOptions),
   express.json({ type: "application/json" }),
   (req, res) => {
     const sig = req.headers["stripe-signature"];
