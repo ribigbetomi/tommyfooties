@@ -5,7 +5,6 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const testAPI = require("./routes/testAPI");
 const cors = require("cors");
-const stripe = require("./routes/stripe");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -24,6 +23,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.all("*", (req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Methods",
+    "PUT, GET, POST, DELETE, PATCH, OPTIONS"
+  );
+  res.header("Access-Control-Allow-Headers", "*");
+  res.header("Access-Control-Allow-Credentials", true);
+  next();
+});
+
 require("./startup/logging")();
 require("./startup/routes")(app);
 require("./startup/db")();
@@ -34,7 +44,6 @@ require("./startup/prod")(app);
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/testAPI", testAPI);
-app.use("/api/stripe", stripe);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -50,16 +59,6 @@ app.use(function (err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render("error");
-});
-app.all("*", (req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Methods",
-    "PUT, GET, POST, DELETE, PATCH, OPTIONS"
-  );
-  res.header("Access-Control-Allow-Headers", "*");
-  res.header("Access-Control-Allow-Credentials", true);
-  next();
 });
 
 const port = process.env.PORT || 9000;
