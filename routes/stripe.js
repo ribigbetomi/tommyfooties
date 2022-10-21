@@ -150,7 +150,7 @@ router.post(
   "/webhook",
   cors(corsOptions),
   express.json({ type: "application/json" }),
-  (req, res) => {
+  async (req, res) => {
     const sig = req.headers["stripe-signature"];
 
     let endpointSecret;
@@ -165,7 +165,11 @@ router.post(
       let event;
 
       try {
-        event = stripe.webhooks.constructEvent(req.body, sig, endpointSecret);
+        event = await stripe.webhooks.constructEvent(
+          req.body,
+          sig,
+          endpointSecret
+        );
         console.log("Webhook verified.");
       } catch (err) {
         console.log(`Webhook Error: ${err.message}`);
@@ -184,7 +188,7 @@ router.post(
 
     // Handle the event
     if (eventType === "checkout.session.completed") {
-      stripe.customers
+      await stripe.customers
         .retrieve(data.customer)
         .then((customer) => {
           createOrder(customer, data);
