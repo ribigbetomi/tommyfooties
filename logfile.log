@@ -299,3 +299,4 @@
 {"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:47:09.204Z"}
 {"message":"Cannot read properties of undefined (reading 'data')","stack":"TypeError: Cannot read properties of undefined (reading 'data')\n    at C:\\Users\\Hp\\integration\\api\\routes\\paystack.js:36:19\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","level":"error","timestamp":"2022-10-26T16:47:25.722Z"}
 {"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:48:08.169Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T17:52:21.992Z"}
