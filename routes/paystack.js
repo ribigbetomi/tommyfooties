@@ -7,7 +7,8 @@ const axios = require("axios");
 require("dotenv").config();
 
 router.get("/verify/:reference", async (req, res) => {
-  let ref = req.params.reference;
+  // let ref = req.params.reference;
+  let ref = T0274993588707;
 
   console.log(ref);
 
@@ -23,15 +24,16 @@ router.get("/verify/:reference", async (req, res) => {
         "cache-control": "no-cache",
       },
     })
-    .then((res) => {
-      output = res;
+    .then((response) => {
+      // if (response.status) res.send("Successful payment");
+      output = response;
     })
     .catch((error) => {
-      // output = error;
       output = error;
+      // toast.error(error.message);
     });
 
-  console.log(output);
+  console.log(response);
 
   // if (output.status === 200) res.send("Successful payment");
 
