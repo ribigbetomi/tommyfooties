@@ -263,3 +263,39 @@
 {"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T07:58:00.046Z"}
 {"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T12:28:06.093Z"}
 {"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T13:31:42.125Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T15:12:44.219Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T15:17:43.354Z"}
+{"message":"Cannot read properties of undefined (reading 'data')","stack":"TypeError: Cannot read properties of undefined (reading 'data')\n    at C:\\Users\\Hp\\integration\\api\\routes\\paystack.js:32:19\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","level":"error","timestamp":"2022-10-26T15:18:10.966Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T15:20:26.361Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T15:22:25.900Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T15:27:49.876Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T15:29:16.902Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T15:31:44.616Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T15:36:20.076Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T15:41:40.075Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T15:51:20.799Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T15:53:01.855Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T15:57:26.506Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:01:25.585Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:06:18.462Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:09:59.555Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:14:26.061Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:16:56.017Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:20:11.254Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:20:33.393Z"}
+{"message":"Cannot read properties of undefined (reading 'data')","stack":"TypeError: Cannot read properties of undefined (reading 'data')\n    at C:\\Users\\Hp\\integration\\api\\routes\\paystack.js:34:19\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","level":"error","timestamp":"2022-10-26T16:20:49.803Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:21:38.867Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:22:24.760Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:23:38.433Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:25:05.186Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:25:57.935Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:28:23.994Z"}
+{"message":"Cannot read properties of undefined (reading 'data')","stack":"TypeError: Cannot read properties of undefined (reading 'data')\n    at C:\\Users\\Hp\\integration\\api\\routes\\paystack.js:34:19\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","level":"error","timestamp":"2022-10-26T16:28:41.005Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:32:28.693Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:35:28.483Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:38:36.207Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:45:35.154Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:45:51.495Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:47:09.204Z"}
+{"message":"Cannot read properties of undefined (reading 'data')","stack":"TypeError: Cannot read properties of undefined (reading 'data')\n    at C:\\Users\\Hp\\integration\\api\\routes\\paystack.js:36:19\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","level":"error","timestamp":"2022-10-26T16:47:25.722Z"}
+{"level":"info","message":"Connected to mongodb://localhost/tommyfooties...","timestamp":"2022-10-26T16:48:08.169Z"}
