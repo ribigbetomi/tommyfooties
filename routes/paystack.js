@@ -33,9 +33,9 @@ router.get("/verify/:reference", async (req, res) => {
 
   console.log(output);
 
-  // if (output.data.data.status === "success") res.send("Successful payment");
+  if (output.data.data.status === "success") res.send("Successful payment");
 
-  res.status(200).send("Payment was successfully verified");
+  // res.status(200).send("Payment was successfully verified");
 });
 
 // router.post("/webhook", function (req, res) {
