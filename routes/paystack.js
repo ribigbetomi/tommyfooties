@@ -33,7 +33,7 @@ router.get("/verify/:reference", async (req, res) => {
 
   console.log(output);
 
-  if (output.data.status) res.send("Successful payment");
+  if (output.status) res.send("Successful payment");
 
   // res.status(200).send("Payment was successfully verified");
 });
