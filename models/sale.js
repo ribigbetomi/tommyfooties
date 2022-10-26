@@ -16,6 +16,10 @@ const saleSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  cart_items: {
+    type: [],
+    required: true,
+  },
 });
 
 const Sale = mongoose.model("Sale", saleSchema);
