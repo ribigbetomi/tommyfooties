@@ -18,7 +18,7 @@ router.get("/verify/:reference", async (req, res) => {
   await axios
     .get(`https://api.paystack.co/transaction/verify/${ref}`, {
       headers: {
-        authorization: "sk_live_f1bab2ead630baf5a44d7f52417a1b76b246e962",
+        authorization: `Bearer ${secret}`,
         "content-type": "application/json",
         "cache-control": "no-cache",
       },
@@ -33,7 +33,7 @@ router.get("/verify/:reference", async (req, res) => {
 
   console.log(output);
 
-  if (output.data.data.status === "success") res.send("Successful payment");
+  if (output.data.status) res.send("Successful payment");
 
   // res.status(200).send("Payment was successfully verified");
 });
