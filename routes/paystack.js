@@ -18,7 +18,7 @@ router.get("/verify/:reference", async (req, res) => {
   await axios
     .get(`https://api.paystack.co/transaction/verify/${ref}`, {
       headers: {
-        authorization: `Bearer ${secret}`,
+        authorization: "sk_live_f1bab2ead630baf5a44d7f52417a1b76b246e962",
         "content-type": "application/json",
         "cache-control": "no-cache",
       },
