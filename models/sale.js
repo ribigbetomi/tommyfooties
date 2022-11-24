@@ -14,10 +14,14 @@ const saleSchema = new mongoose.Schema({
   },
   reference: {
     type: String,
-    required: true,
+    required: false,
   },
   cart_items: {
     type: [],
+    required: true,
+  },
+  user_id: {
+    type: String,
     required: true,
   },
 });
