@@ -159,9 +159,7 @@
 
 //     let endpointSecret;
 
-//     // endpointSecret =
-//     //   "whsec_8d16263d51820da43909d60ea2cf082a29c9362e7a6c96a233fc8e3f1cc39d88";
-
+//
 //     let data;
 //     let eventType;
 

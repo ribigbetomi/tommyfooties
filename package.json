@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "server": "nodemon app.js"
   },
   "engines": {
     "node": "16.16.0"
@@ -22,6 +23,7 @@
     "dotenv-extended": "^2.9.0",
     "express": "~4.16.1",
     "express-async-errors": "^3.1.1",
+    "express-async-handler": "^1.2.0",
     "helmet": "^6.0.0",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
@@ -37,5 +39,8 @@
     "stripe": "^8.218.0",
     "use-shopping-cart": "^2.1.0",
     "winston": "^2.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }

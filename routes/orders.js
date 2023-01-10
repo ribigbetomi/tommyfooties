@@ -1,23 +1,57 @@
-// const { Order } = require("../models/Order");
-// const { auth, isUser, isAdmin } = require("../middleware/auth");
-
-// const router = require("express").Router();
+const { Order } = require("../models/order");
+const auth = require("../middleware/auth");
+const asyncHandler = require("express-async-handler");
+const router = require("express").Router();
 
 // //CREATE
 
 // // createOrder is fired by stripe webhook
 // // example endpoint
 
-// router.post("/", auth, async (req, res) => {
-//   const newOrder = new Order(req.body);
+router.post(
+  "/",
+  auth,
+  asyncHandler(async (req, res) => {
+    const {
+      orderItems,
+      // shippingAddress,
+      // paymentMethod,
+      itemsPrice,
+      taxPrice,
+      shippingPrice,
+      totalPrice,
+    } = req.body;
 
-//   try {
-//     const savedOrder = await newOrder.save();
-//     res.status(200).send(savedOrder);
-//   } catch (err) {
-//     res.status(500).send(err);
-//   }
-// });
+    if (orderItems && orderItems.length === 0) {
+      res.status(400);
+      throw new Error("No order items");
+      return;
+    } else {
+      const order = new Order({
+        orderItems,
+        user: req.user._id,
+        //   shippingAddress,
+        //   paymentMethod,
+        itemsPrice,
+        taxPrice,
+        shippingPrice,
+        totalPrice,
+      });
+
+      const createOrder = await order.save();
+      res.status(201).json(createOrder);
+    }
+
+    //   const newOrder = new Order(req.body);
+
+    //   try {
+    //     const savedOrder = await newOrder.save();
+    //     res.status(200).send(savedOrder);
+    //   } catch (err) {
+    //     res.status(500).send(err);
+    //   }
+  })
+);
 
 // //UPDATE
 // router.put("/:id", isAdmin, async (req, res) => {
@@ -95,4 +129,4 @@
 //   }
 // });
 
-// module.exports = router;
+module.exports = router;

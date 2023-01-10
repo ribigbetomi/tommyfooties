@@ -20,7 +20,13 @@ router.post("/", async (req, res) => {
 
   const token = user.generateAuthToken();
 
-  res.send(token);
+  // res.send(token);
+  res.send({
+    _id: user._id,
+    name: user.name,
+    email: user.email,
+    token,
+  });
 });
 
 function validate(req) {

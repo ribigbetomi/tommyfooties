@@ -43,74 +43,74 @@ router.get("/verify/:reference", async (req, res) => {
   res.status(200).send(output.data.message);
 });
 
-router.post("/webhook", async (req, res) => {
-  const url = process.env.CLIENT_URL;
-  let eventType;
-  let event;
+// router.post("/webhook", async (req, res) => {
+//   const url = process.env.CLIENT_URL;
+//   let eventType;
+//   let event;
 
-  const hash = crypto
-    .createHmac("sha512", secret)
-    .update(JSON.stringify(req.body))
-    .digest("hex");
+//   const hash = crypto
+//     .createHmac("sha512", secret)
+//     .update(JSON.stringify(req.body))
+//     .digest("hex");
 
-  if (hash == req.headers["x-paystack-signature"]) {
-    event = JSON.parse(req.body);
-    console.log(event);
-    eventType = event.event;
+//   if (hash == req.headers["x-paystack-signature"]) {
+//     event = JSON.parse(req.body);
+//     console.log(event);
+//     eventType = event.event;
 
-    if (eventType === "charge.success") {
-      const data = _.at(event.data, [
-        // "reference",
-        "amount",
-        "email",
-        "first_name",
-        "cart_items",
-        "userId",
-      ]);
+//     if (eventType === "charge.success") {
+//       const data = _.at(event.data, [
+//         // "reference",
+//         "amount",
+//         "email",
+//         "first_name",
+//         "cart_items",
+//         "userId",
+//       ]);
 
-      [
-        // reference,
-        amount,
-        email,
-        first_name,
-        cart_items,
-        userId,
-      ] = data;
+//       [
+//         // reference,
+//         amount,
+//         email,
+//         first_name,
+//         cart_items,
+//         userId,
+//       ] = data;
 
-      newSale = {
-        // reference,
-        amount,
-        email,
-        first_name,
-        cart_items,
-        userId,
-      };
+//       newSale = {
+//         // reference,
+//         amount,
+//         email,
+//         first_name,
+//         cart_items,
+//         userId,
+//       };
 
-      const sale = new Sale(newSale);
-      await sale.save();
-      // sale
-      //   .save()
-      //   .then((sale) => {
-      //     //   if (sale) {
-      //     //     res.redirect("/receipt/" + reference);
-      //     //   }
-      //     console.log(sale);
-      //   })
-      //   .catch((e) => {
-      //     res.redirect(`${url}/error`);
-      //   });
-    }
-    // Order;
+//       const sale = new Sale(newSale);
+//       await sale.save();
+//       // sale
+//       //   .save()
+//       //   .then((sale) => {
+//       //     //   if (sale) {
+//       //     //     res.redirect("/receipt/" + reference);
+//       //     //   }
+//       //     console.log(sale);
+//       //   })
+//       //   .catch((e) => {
+//       //     res.redirect(`${url}/error`);
+//       //   });
+//     }
+//     // Order;
 
-    // await stripe.customers
-    //   .retrieve(data.customer)
-    //   .then((customer) => {
-    //     createOrder(customer, data);
-    //   })
-    //   .catch((err) => console.log(err.message));
-  }
-  res.send(200);
-});
+//     // await stripe.customers
+//     //   .retrieve(data.customer)
+//     //   .then((customer) => {
+//     //     createOrder(customer, data);
+//     //   })
+//     //   .catch((err) => console.log(err.message));
+//   }
+//   res.send(200);
+// });
 
 // router.post("/pay", (req, res) => {
 //   const form = _.pick(req.body, ["amount", "userEmail", "userName"]);
